@@ -1,0 +1,14 @@
+Package: mypackage
+Type: Package
+Title: display rpart using opencpu
+Version: 0.1
+Date: 2015-12-29
+Author: huanchung
+Maintainer: ak66h1989@gmail.com
+Description: testing opencpu
+License: no
+URL: http://github.com/ak66h1989/mypackage.git
+BugReports: http://github.com/ak66h1989/mypackage/issues
+LazyData: TRUE
+Imports:RMySQL
+Depends:data.table,DT,TTR,dygraphs,opencpu,quantmod,rpart

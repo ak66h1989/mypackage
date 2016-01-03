@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Example map</title>
+
+<link rel="stylesheet" href="app.css">
+
+<script src="opencpu/jquery-1.11.3.min.js"></script>
+<script src="opencpu/opencpu-0.5.js"></script>
+<script src="tree.js"></script>
+
+</head>
+
+<body>
+
+    <h1>Basic plotting</h1>
+
+    <b>n (count) </b> <input type="number" id="nfield" value="1000">
+
+    <b>distribution type</b> <select id="dep">
+      <option>r1</option>
+      <option>r2</option>
+      <option>r3</option>
+      <option>r6</option>
+    </select>
+
+    <br />
+    <button id="submitbutton" type="button">Submit to server!</button>
+
+    <div id="plotdiv"></div>
+
+    <br />
+
+    <p>
+     This page shows the <tt>opencpu.js</tt> plot widget. We use <tt>jQuery.rplot</tt> plugin from the <tt>opencpu.js</tt> library to call the R function called <a href="../R/randomplot">randomplot</a>.</li> included in this R package.
+    </p>
+
+</body>
+
+</html>

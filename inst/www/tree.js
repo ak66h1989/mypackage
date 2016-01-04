@@ -1,4 +1,6 @@
     $(document).ready(function(){
+      
+     
       $("#submitbutton").on("click", function(){
 
         //disable the button to prevent multiple clicks
@@ -7,6 +9,8 @@
         //read the value for 'myname'
         var nfield = parseInt($("#nfield").val());
         var dep = $("#dep").val();
+        var model = $("#model").val();
+        var act = $("#act").val();
 
         //create the plot area on the plotdiv element
         var req = $("#plotdiv").rplot("tree", {
@@ -21,10 +25,9 @@
         req.always(function(){
           $("#submitbutton").removeAttr("disabled")
         });
-        
       
-        
-        
+      
+
         
       });
     });

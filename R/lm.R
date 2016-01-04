@@ -1,6 +1,6 @@
 
 
-lm<- function(y='r1',model=c('lm','step'),action=c('p','s')){
+lm<- function(y='r1',model=c('lm','step'),act=c('p','s')){
   
   r.df<-as.data.frame(r)
   r.df<-r.df[,c('年月日',y)]
@@ -9,13 +9,13 @@ lm<- function(y='r1',model=c('lm','step'),action=c('p','s')){
   xy.dt<-subset(xy.dt, select =-c(年月日))
   dt<-xy.dt[complete.cases(xy.dt[,y]),]
   fit <- stats::lm(as.formula(paste(y,'~ .')), data=dt)
-  if (model=='lm'&&action=='p'){
+  if (model=='lm'&&act=='p'){
     par(mfrow=c(2,2))
     plot(fit)
     
-  }else if(model=='lm'&&action=='s'){summary(fit)}
+  }else if(model=='lm'&&act=='s'){summary(fit)}
     
-  else if(model=='step'&&action=='p'){
+  else if(model=='step'&&act=='p'){
     dt<-dt[complete.cases(dt),]
     step <- MASS::stepAIC(fit, direction="both") #missing values are not allowed
     step$anova # display results
@@ -23,7 +23,7 @@ lm<- function(y='r1',model=c('lm','step'),action=c('p','s')){
     plot(fit1)
   }
   
-  else if(model=='step'&&action=='s'){
+  else if(model=='step'&&act=='s'){
     dt<-dt[complete.cases(dt),]
     step <- MASS::stepAIC(fit, direction="both") #missing values are not allowed
     step$anova # display results
